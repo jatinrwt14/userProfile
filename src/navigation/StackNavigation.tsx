@@ -2,10 +2,11 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import UserListScreen from "../screens/UserList/View/UserListScreen";
 import DetailsScreen from "../screens/Details/View/DetailsScreen";
+import { User } from "../networking/ResponseDTO/UserListResponseDTO";
 
 export type RootStackParamList = {
     UserListScreen: undefined
-    DetailsScreen: undefined
+    DetailsScreen: { user: User }
 };
 
 const StackNavigation = () => {
@@ -26,6 +27,7 @@ const StackNavigation = () => {
                 options={{
                     headerShown: true,
                     headerTitle: "User Info",
+                    headerBackTitle: '',
                 }}
             />
         </Stack.Navigator>
